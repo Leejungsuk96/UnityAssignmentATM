@@ -1898,7 +1898,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100,000
+  m_Text: 0
 --- !u!222 &780947680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2058,7 +2058,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Balance: 50,000'
+  m_Text: 'Balance: 0'
 --- !u!222 &811750002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4258,8 +4258,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167c55539130da6438e1409b576493be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalletBalance: 0
-  AccountBalance: 0
+  walletBalance: {fileID: 780947679}
+  accountBalance: {fileID: 811750001}
+  accountName: {fileID: 2082792968}
+  customerInfo: {fileID: 11400000, guid: 58d4fc0b6d8e0f34098b8efec3531975, type: 2}
 --- !u!4 &1614358171
 Transform:
   m_ObjectHideFlags: 0
@@ -5135,13 +5137,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 2
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uC815\uC11D"
+  m_Text: "\uC18C\uC720\uC790"
 --- !u!222 &2082792969
 CanvasRenderer:
   m_ObjectHideFlags: 0
