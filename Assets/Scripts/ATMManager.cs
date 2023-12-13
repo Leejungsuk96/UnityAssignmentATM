@@ -13,9 +13,7 @@ public class ATMManager : MonoBehaviour
 
     private void Awake()
     {
-        accountName.text = customerInfo.CustomerName;
-        accountBalance.text ="Balance: " + customerInfo.CustomerAccountBalance.ToString();
-        walletBalance.text = customerInfo.CustomerWalletBalance.ToString();
+        Setting();
     }
     // Start is called before the first frame update
     void Start()
@@ -24,8 +22,15 @@ public class ATMManager : MonoBehaviour
     }
 
     //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+    void Update()
+    {
+        Setting();
+    }
+
+    private void Setting()
+    {
+        accountName.text = customerInfo.CustomerName;
+        accountBalance.text = "Balance: " + customerInfo.CustomerAccountBalance.ToString();
+        walletBalance.text = customerInfo.CustomerWalletBalance.ToString();
+    }
 }
