@@ -38,8 +38,8 @@ public class ATMManager : MonoBehaviour
     private void UISetting()
     {
         accountName.text = customerInfo.CustomerName;
-        accountBalance.text = "Balance: " + customerInfo.CustomerAccountBalance.ToString();
-        walletBalance.text = customerInfo.CustomerWalletBalance.ToString();
+        accountBalance.text = string.Format("Balance: {0:#,###}", customerInfo.CustomerAccountBalance);
+        walletBalance.text = string.Format("{0:#,###}", customerInfo.CustomerWalletBalance);
 
         UserAccountBalance = customerInfo.CustomerAccountBalance;
         UserWalletBalance = customerInfo.CustomerWalletBalance;
