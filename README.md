@@ -7,6 +7,19 @@
 ![image](https://github.com/Leejungsuk96/UnityAssignmentATM/assets/114940193/e93e4191-dd43-4289-ac52-2b4b1ee24b5a)
 <br/><br/><br/><br/>
 
+## 필수 구현 / 추가 구현<br/><br/>
+필수구현<br/><br/>
+1. ATM 화면 구성:white_check_mark:<br/><br/>
+2. 입금 출금:white_check_mark:<br/><br/>
+3. 출금 기능:white_check_mark:<br/><br/><br/><br/>
+
+선택 구현<br/><br/>
+1. 통화 단위 적용:white_check_mark:<br/><br/>
+2. 금액 입력시 숫자만 입력:white_check_mark:<br/><br/>
+3. 로그인 기능<br/><br/>
+4. 회원가입<br/><br/>
+5. 송금 기능<br/><br/>
+
 ## 주요기능
 1. 스크립터블 오브젝트를 사용해서 은행 고객 정보 관리<br/><br/>
 2. 입출금 기능 + 원하는 금액 입력 InputField로 구현
