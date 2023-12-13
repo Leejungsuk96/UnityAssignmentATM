@@ -10,27 +10,41 @@ public class ATMManager : MonoBehaviour
     [SerializeField] private Text accountBalance;
     [SerializeField] private Text accountName;
     public CustomerInformation customerInfo;
+    private int UserAccountBalance;
+    private int UserWalletBalance;
 
     private void Awake()
     {
-        Setting();
+        SettingSaveUserInfo();        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        UISetting();
     }
 
     //// Update is called once per frame
     void Update()
     {
-        Setting();
+        UISetting();
     }
 
-    private void Setting()
+    private void SettingSaveUserInfo()
+    {        
+        customerInfo.CustomerAccountBalance = PlayerPrefs.GetInt("AccountBalance0");
+        customerInfo.CustomerWalletBalance = PlayerPrefs.GetInt("WalletBalance0");
+    }
+
+    private void UISetting()
     {
         accountName.text = customerInfo.CustomerName;
         accountBalance.text = "Balance: " + customerInfo.CustomerAccountBalance.ToString();
         walletBalance.text = customerInfo.CustomerWalletBalance.ToString();
+
+        UserAccountBalance = customerInfo.CustomerAccountBalance;
+        UserWalletBalance = customerInfo.CustomerWalletBalance;
+
+        PlayerPrefs.SetInt("AccountBalance0", UserAccountBalance);
+        PlayerPrefs.SetInt("WalletBalance0", UserWalletBalance);
     }
 }
