@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,25 @@ using UnityEngine.UI;
 
 public class LoginManager : MonoBehaviour
 {
+    // 회원가입 InputField
     public InputField IDInput;
     public InputField NameInput;
     public InputField PasswordInput;
-    public InputField PsConfirmInput;
+    public InputField PsConfirmInput;        
     public Text messageTxt;
+    //로그인 InputField
+    public InputField LoginIDInput;
+    public InputField LoginPSInput;
+    public Text loginmessageTxt;
+
+    public GameObject loginManager;
+    public GameObject atmManager;
+    public GameObject SignUpPanel;
+
+    private void Awake()
+    {
+       
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +70,55 @@ public class LoginManager : MonoBehaviour
             PlayerPrefs.SetString(UserID, UserName + ":" + UserPassword);
             PlayerPrefs.Save();
             messageTxt.text = "회원가입이 완료되었습니다.";
-        }
-            
-        
+        }                    
     }
+   
+    public void Login()
+    {
+        string UserID = LoginIDInput.text.Trim();
+        string UserPassword = LoginPSInput.text.Trim();
+
+        if (string.IsNullOrEmpty(UserID) || string.IsNullOrEmpty(UserPassword))
+        {
+            loginmessageTxt.text = "ID와 비밀번호를 입력해주세요";
+        }
+
+        else if (PlayerPrefs.HasKey(UserID))
+        {
+            string[] userInfo = PlayerPrefs.GetString(UserID).Split(':');
+            string SavePassword = userInfo[1];
+
+            if (SavePassword == userInfo[1])
+            {
+                loginmessageTxt.text = "로그인 성공!";
+                Invoke("OnClickLogin", 2f);
+            }
+
+            else
+            {
+                loginmessageTxt.text = "비밀번호가 일치 하지 않습니다.";
+            }
+        }
+        else
+        {
+            loginmessageTxt.text = "등록되지 않은 ID입니다.";
+        }        
+    }
+
+    public void OnClickLogin()
+    {
+        loginManager.SetActive(false);
+        atmManager.SetActive(true);
+    }
+
+    public void OnClickSignUP()
+    {
+        SignUpPanel.SetActive(true);
+    }
+
+    public void OnClickCancel()
+    {
+        SignUpPanel.SetActive(false);
+    }
+    
 }
