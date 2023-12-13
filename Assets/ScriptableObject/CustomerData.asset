@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CustomerData
   m_EditorClassIdentifier: 
   CustomerName: "\uC774\uC815\uC11D"
-  CustomerAccountBalance: 296229
-  CustomerWalletBalance: 503771
+  CustomerAccountBalance: 400000
+  CustomerWalletBalance: 400000
