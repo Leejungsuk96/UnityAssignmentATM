@@ -75,30 +75,33 @@ public class LoginManager : MonoBehaviour
    
     public void Login()
     {
+        //공백 제거
         string UserID = LoginIDInput.text.Trim();
         string UserPassword = LoginPSInput.text.Trim();
 
+        //공백 방지
         if (string.IsNullOrEmpty(UserID) || string.IsNullOrEmpty(UserPassword))
         {
             loginmessageTxt.text = "ID와 비밀번호를 입력해주세요";
         }
-
+        // 아이디 존재 확인
         else if (PlayerPrefs.HasKey(UserID))
         {
             string[] userInfo = PlayerPrefs.GetString(UserID).Split(':');
             string SavePassword = userInfo[1];
-
+            //로그인 성공
             if (SavePassword == userInfo[1])
             {
                 loginmessageTxt.text = "로그인 성공!";
                 Invoke("OnClickLogin", 2f);
             }
-
+            // 비밀번호 불일치
             else
             {
                 loginmessageTxt.text = "비밀번호가 일치 하지 않습니다.";
             }
         }
+        //아이디 틀림
         else
         {
             loginmessageTxt.text = "등록되지 않은 ID입니다.";
